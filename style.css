@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+header {
+    background-color: #5cb85c;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.button {
+    display: inline-block;
+    padding: 15px 40px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Degradê */
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px; /* Totalmente arredondado */
+    position: fixed; /* Fixo no canto esquerdo */
+    left: 20px; /* Distância do lado esquerdo */
+    bottom: 20px; /* Distância da parte inferior */
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.4s ease; /* Transição suave para animações */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    z-index: 100; /* Garantir que o botão esteja sempre visível */
+}
+
+/* Degradê animado quando o usuário passa o mouse */
+.btn:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb); /* Inverter as cores do degradê */
+    transform: scale(1.1); /* Leve expansão do botão */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Aumentar a sombra */
+}
+
+/* Efeito de clique (quando o botão é pressionado) */
+.btn:active {
+    transform: scale(1); /* Voltar ao tamanho original */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Sombra mais leve */
+}
+
+/* Animação de onda ao clicar */
+.btn::before {
+    content: "";
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    background-color: rgba(255, 255, 255, 0.2); /* Cor branca com opacidade para o efeito de onda */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    transition: transform 0.5s ease;
+}
+
+.btn:active::before {
+    transform: translate(-50%, -50%) scale(1); /* Expandir a onda */
+}
+
+.menu-hamburguer {
+    display: none;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.intro {
+    padding: 50px;
+    text-align: center;
+    background-color: #e8f5e9;
+}
+
+.grid {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.card {
+    background-color: #fff;
+    padding: 20px;
+    width: 30%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+footer {
+    background-color: #5cb85c;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-hamburguer {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .grid {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+    
+    header {
+        background-color: #5cb85c;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .logo {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+    
+    .menu-hamburguer {
+        display: none;
+        font-size: 2em;
+        cursor: pointer;
+    }
+    
+    nav ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    nav ul li {
+        margin: 0 10px;
+    }
+    
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    
+    /* Estilos para a Calculadora de IMC */
+    .calculadora-imc {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        text-align: center;
+    }
+    
+    .calculadora-imc h1 {
+        color: #5cb85c;
+        margin-bottom: 20px;
+    }
+    
+    .calculadora-imc label {
+        display: block;
+        margin: 10px 0;
+        font-weight: bold;
+    }
+    
+    .calculadora-imc input[type="number"] {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1em;
+    }
+    
+    .calculadora-imc button {
+        background-color: #5cb85c;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1em;
+        cursor: pointer;
+    }
+    
+    .calculadora-imc button:hover {
+        background-color: #4cae4c;
+    }
+    
+    .calculadora-imc p {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+    
+    /* Estilos para dispositivos móveis */
+    @media (max-width: 768px) {
+        .calculadora-imc {
+            width: 90%;
+        }
+    
+        .menu-hamburguer {
+            display: block;
+        }
+    
+        nav ul {
+            display: none;
+            flex-direction: column;
+            text-align: center;
+        }
+    
+        nav ul li {
+            margin: 10px 0;
+        }
+    }
+
+
+}
